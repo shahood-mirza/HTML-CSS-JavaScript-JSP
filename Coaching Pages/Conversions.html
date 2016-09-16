@@ -1,0 +1,30 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <table align="center" width="30%" style="border:1px solid #000">
+    
+      <tr>
+      <td>Celsius</td>
+      <td>Farenheit</td>
+      </tr>
+    
+	  <script type="text/javascript">
+	  var celsius = 0;
+	  var faren;
+	  
+		while(celsius<=300)
+		{
+		  faren = (9 / 5) * celsius + 32;
+		  
+		  document.write("<tr>");
+		  document.write("<td>"+celsius+"</td>");
+		  document.write("<td>"+faren+"</td>");
+		  document.write("</tr>");
+		  
+		  celsius += 20;
+		}
+      </script>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<html>
+
+<head>
+<title>MDG Canada's Best PC Value</title>
+<style type="text/css">
+h1, h2, h3, h4, h5, h6 {color:blue; font-family:Arial, Helvetica, sans-serif;}
+</style>
+<script type="text/javascript">
+	function calculate()
+	{
+		var total = 899;
+		
+		var mem = document.getElementById("Memory");
+		var mon = document.getElementById("Monitor");
+		
+		for (i=0; i<frm.CPUspeed.length; i++) 
+		{
+			if (frm.CPUspeed[i].checked==true)
+			{
+				total += parseFloat(frm.CPUspeed[i].value);
+			}
+		}
+		
+		for (i=0; i<frm.HardDrive.length; i++) 
+		{
+			if (frm.HardDrive[i].checked==true)
+			{
+				total += parseFloat(frm.HardDrive[i].value);
+			}
+		}
+		
+		total += parseFloat(mem.options[mem.selectedIndex].value);
+		total += parseFloat(mon.options[mon.selectedIndex].value);
+		
+		if(frm.modem.checked)
+		{
+			total += parseFloat(frm.modem.value);
+		}
+		
+		if(frm.ECard.checked)
+		{
+			total += parseFloat(frm.ECard.value);
+		}
+		
+		frm.total.value = total;
+	}
+</script>
+</head>
+<body style="background-color:white; color:black">
+<h1 align="center">The MDG Value</h1><br>
+
+The MDG Value delivers speed and performance at an affordable price. Perfect for small businesses, the MDG Value provides computing punch with either a 1.7GHz, or 2.4GHz Pentium 4 processor with 128MB, 256MB, 512MB or 1024MB of SDRAM. This is the system that can get the job done. As with other MDG systems, you can configure the Value to meet your own individual needs. Increase the hard disk size up to 120GB (40GB standard) or the memory to 512MB for serious computing and graphical work. You can also choose from MDG's line of well-crafter accessories, including our modem and NIC card.
+<br>
+
+<h3 align="center">Configuration Options</h3>
+
+<form>
+  <table width="30%" align="center" style="border-style:inset; border-color:red; border-width:4px">
+    <tr>
+      <td><table width="100%" border="0">
+        <tr>
+          <td>Base Price = $899</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>1) Processor Speed:</td>
+          <td>
+          	<input type="radio" name="CPUspeed" value="0" id="1.7" checked>1.7GHz<br>
+            <input type="radio" name="CPUspeed" value="60" id="2.0">2.0GHz (Add $60)<br>
+            <input type="radio" name="CPUspeed" value="115" id="2.4">2.4GHz (Add $115)
+          </td>
+        </tr>
+        <tr>
+          <td>2) Hard Drive:</td>
+          <td>
+          	<input type="radio" name="HardDrive" value="0" id="40" checked>40GB<br>
+            <input type="radio" name="HardDrive" value="50" id="80">80GB (Add $50)<br>
+            <input type="radio" name="HardDrive" value="110" id="120">120GB (Add $110)
+          </td>
+        </tr>
+        <tr>
+          <td>3) Memory:</td>
+          <td>
+          <select name="Memory" id="Memory">
+          <option value="0" id="mem1">128MB
+          <option value="20" id="mem2">256MB (add $20)
+          <option value="60" id="mem3">512MB (add $60)
+          <option value="150" id="mem4">1024MB (add $150)
+          </select>
+          </td>
+        </tr>
+        <tr>
+          <td>4) Monitor:</td>
+          <td>
+          <select name="Monitor" id="Monitor">
+          <option value="0" id="mon1">17"
+          <option value="210" id="mon2">19" (add $210)
+          <option value="700" id="mon3">21" (add $700)
+          </select>
+          </td>
+        </tr>
+        <tr>
+          <td>5) 56K Modem</td>
+          <td><input type="checkbox" name="modem" value="75" id="addModem">(add $75)</td>
+        </tr>
+        <tr>
+          <td>6) 10BaseT/TP Ethernet Card: </td>
+          <td><input type="checkbox" name="ECard" value="75" id="addCard">(add $75)</td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="button" name="Calculate" value="Calculate Total" onClick="calculate();">&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="reset" name="Reset" value="Reload"></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="right" style="font-family:Arial, Helvetica, sans-serif; color:blue"><b>TOTAL $</b>
+          <input type="text" size="7" name="total" id="total"></td>
+        </tr>
+      </table></td>
+    </tr>
+  </table>
+</form>
+<script type="text/javascript">
+		var frm = document.forms[0];
+</script>
+</body>
+
+</html>

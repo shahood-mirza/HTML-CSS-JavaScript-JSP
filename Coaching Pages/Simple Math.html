@@ -1,0 +1,43 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//alert("hello user");
+			
+			/*			
+			var input;
+			var incorrect;
+
+			do
+			{
+				input = prompt("enter a number", "0");
+				incorrect = isNaN(input);
+			}
+			while (incorrect);
+
+			document.write("you entered " + input);
+			*/
+			
+			/*
+			var answer = confirm("are you sure?");
+			if(answer)
+				document.write("you have agreed");
+			else
+				document.write("you cancelled");
+			*/
+			
+			var num1;
+			var num2;
+			var op;
+			var res;
+
+			num1 = parseFloat(prompt("enter first number", "0"));
+			num2 = parseFloat(prompt("enter second number", "0"));
+
+			op = prompt("enter the operator", "+");
+
+			eval("res =" + num1 + op + num2 + ";document.write(res);");
+		</script>
+	</body>
+</html>

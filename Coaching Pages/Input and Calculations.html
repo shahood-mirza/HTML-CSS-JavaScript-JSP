@@ -1,0 +1,43 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <table align="center" width="30%" style="border:1px solid #000">
+    
+      <tr>
+      <td>Name</td>
+      <td>Wage</td>
+      <td>Hours</td>
+      <td>Pay</td>
+      </tr>
+    
+	  <script type="text/javascript">
+		var empWage, empHours, empName;
+		var empPay = new Array();
+		
+		for(var i=0; i<3; i++)
+		{
+		  empName = prompt("Enter Employee " + (i+1) + "'s Name:");
+		  empWage = parseFloat(prompt("Enter " + empName + "'s Hourly Wage:", "0"));
+		  empHours = parseFloat(prompt("Enter " + empName + "'s Hours Worked:", "0"));
+		  
+		  if(empHours<=40)
+		  {
+			empPay[i] = empHours * empWage;
+		  }
+		  else
+		  {
+			empPay[i] = (40 * empWage) + (((empHours-40) * 1.5) * empWage);
+		  }
+		  
+		  document.write("<tr>");
+		  document.write("<td>"+empName+"</td>");
+		  document.write("<td>$"+empWage+"</td>");
+		  document.write("<td>"+empHours+"</td>");
+		  document.write("<td>$"+empPay[i]+"</td>");
+		  document.write("</tr>");
+		}
+      </script>
+    </table>
+  </body>
+</html>

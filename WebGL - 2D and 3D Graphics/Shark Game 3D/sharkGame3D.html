@@ -1,0 +1,72 @@
+<!--
+*
+* GAME: SHARKSHOOTER 3D
+*
+-->
+<!DOCTYPE html>
+<html>
+	<title>SHARKSHOOTER 3D</title>
+	
+	<script id="vertex-shader" type="x-shader/x-vertex">
+	attribute  vec4 vPosition;
+	attribute  vec4 vColor;
+	varying vec4 fColor;
+		
+	uniform mat4 modelViewMatrix;
+	uniform mat4 projectionMatrix;
+
+	void main() 
+	{
+	    gl_Position = projectionMatrix*modelViewMatrix*vPosition;
+	    fColor = vColor;
+	} 
+	</script>
+	
+	<script id="fragment-shader" type="x-shader/x-fragment">
+	precision mediump float;
+	varying vec4 fColor;
+
+	void main()
+	{
+	    gl_FragColor = fColor;
+	}
+	</script>
+	
+	<script type="text/javascript" src="webgl-utils.js"></script>
+	<script type="text/javascript" src="initShaders.js"></script>
+	<script type="text/javascript" src="MV.js"></script>
+	<script type="text/javascript" src="sharkGame3D.js"></script>
+	
+	<body  bgcolor="#00A2E8">
+		<center>
+			<h1><b>SHARKSHOOTER 3D</b></h1>
+            
+            <table>
+				<tr>
+                	<td>Score: </td>
+                    <td><p id="score"></p></td>
+                    <td> | </td>
+                    <td>Sharks Killed: </td>
+                    <td><p id="sharksKilled"></p></td>
+                </tr>
+            </table>
+            
+			<canvas  style="float:right" id="gl-canvas" width="512" height="512">
+				Oops ... your browser doesn't support the HTML5 canvas element
+			</canvas>
+		</center>
+		
+		<canvas style="float:left" id="canvas" width="300" height="300"></canvas>
+	<div style="float:left">
+		<div><button id="manyAtOnce">Test Shark Explosion</button></div>
+	</div>
+
+	<script type="text/javascript" src="Particle.js"></script>
+	<script type="text/javascript" src="sandbox.js"></script>
+	<script type="text/javascript">
+		ps.sandbox.init();
+		ps.sandbox.go();
+	</script>
+	
+	</body>
+</html>
